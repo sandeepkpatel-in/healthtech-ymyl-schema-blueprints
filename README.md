@@ -31,3 +31,39 @@ These blueprints solve all three using a unified **`@graph` entity architecture*
    ├── audience    ──► [MedicalAudience]       (Patient / Clinician)
    ├── about       ──► [MedicalTherapy / DietarySupplement]
    └── citation    ──► [ScholarlyArticle]      (PubMed URL / DOI)
+
+---
+
+## Repository Structure
+
+| Path | Purpose |
+| :--- | :--- |
+| `blueprints/medical-webpage-ymyl-graph.jsonld` | Complete `@graph` blueprint for clinician-reviewed patient education & clinical guides (`MedicalWebPage` + `Person` author/reviewer + `ScholarlyArticle` citations). |
+| `blueprints/nutraceutical-evidence-article-graph.jsonld` | Compliance-safe `@graph` blueprint for evidence-led supplement content (`WebPage` for review attribution + `Article` + `DietarySupplement` without disease-claim overreach). |
+| `docs/ymyl-schema-audit-checklist.md` | Pre-deploy Technical SEO & YMYL structured data QA checklist (DOM parity, date hygiene, SSR/hydration verification, and common anti-patterns). |
+
+---
+
+## How to Use & Validate
+
+1. Copy the relevant `.jsonld` blueprint into a `<script type="application/ld+json">` tag (rendered server-side via SSR/SSG—avoid client-only delayed injection where possible).
+2. Replace all `example-healthtech.com` / `example-nutra.com` placeholders with your verified production URLs, real author/reviewer profiles, and primary literature DOIs/PMIDs.
+3. Validate **before production deploy** using both tools:
+   - **Schema Markup Validator** (`validator.schema.org`) — verify **0 errors** and clean `@id` graph resolution.
+   - **Google Rich Results Test** (`[search.google.com/test/rich-results](https://search.google.com/test/rich-results)`) — verify rendered DOM pickup and eligible rich features.
+
+---
+
+## Governance & Disclaimer
+
+- All example entities, clinicians, and URLs in this repository are **illustrative placeholders**.
+- Structured data must **strictly mirror visible on-page content**. Never mark up clinician review (`reviewedBy`), credentials (`hasCredential`), or `lastReviewed` dates unless a qualified professional actually reviewed the page and that attribution is visibly displayed to users.
+- These blueprints address Technical SEO and editorial architecture—they do not constitute legal or regulatory advice.
+
+---
+
+## Connect
+
+- **Studio:** [axonautomations.in](https://axonautomations.in)
+- **LinkedIn:** [Sandeep Kumar Patel](https://www.linkedin.com/in/sandeepkpatel-in)
+- **Direct Technical SEO & YMYL Audit Inquiries:** `sandeep@axonautomations.in`
