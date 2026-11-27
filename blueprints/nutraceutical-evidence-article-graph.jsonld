@@ -1,0 +1,85 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://example-nutra.com/#organization",
+      "name": "Example Nutraceutical Labs",
+      "url": "https://example-nutra.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example-nutra.com/assets/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "publishingPrinciples": "https://example-nutra.com/evidence-and-coa-standards/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://example-nutra.com/#website",
+      "url": "https://example-nutra.com/",
+      "name": "Example Nutraceutical Labs",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://example-nutra.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://example-nutra.com/experts/ananya-rao/#person",
+      "name": "Ananya Rao, MSc",
+      "jobTitle": "Clinical Nutrition Researcher",
+      "url": "https://example-nutra.com/experts/ananya-rao/",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "MSc, Clinical Nutrition"
+      },
+      "knowsAbout": [
+        "Dietary Supplements",
+        "Lipid Oxidation & TOTOX Testing",
+        "Nutraceutical Quality Assurance"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://example-nutra.com/research/omega-3-totox-molecular-quality/#webpage",
+      "url": "https://example-nutra.com/research/omega-3-totox-molecular-quality/",
+      "name": "Omega-3 Molecular Quality & TOTOX Values: What Third-Party COAs Actually Measure",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://example-nutra.com/#website"
+      },
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-18",
+      "lastReviewed": "2026-11-18",
+      "reviewedBy": {
+        "@id": "https://example-nutra.com/experts/ananya-rao/#person"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://example-nutra.com/research/omega-3-totox-molecular-quality/#article",
+      "mainEntityOfPage": {
+        "@id": "https://example-nutra.com/research/omega-3-totox-molecular-quality/#webpage"
+      },
+      "headline": "Omega-3 Molecular Quality & TOTOX Values: What Third-Party COAs Actually Measure",
+      "description": "A technical breakdown of peroxide value, p-anisidine value, TOTOX limits, and third-party Certificate of Analysis verification for marine omega-3 dietary supplements.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-18",
+      "author": {
+        "@id": "https://example-nutra.com/experts/ananya-rao/#person"
+      },
+      "publisher": {
+        "@id": "https://example-nutra.com/#organization"
+      },
+      "about": {
+        "@type": "DietarySupplement",
+        "name": "Marine Omega-3 Polyunsaturated Fatty Acids (EPA & DHA)",
+        "activeIngredient": "Eicosapentaenoic acid (EPA), Docosahexaenoic acid (DHA)",
+        "description": "Dietary supplement evaluated for oxidative stability via peroxide, p-anisidine, and TOTOX metrics."
+      }
+    }
+  ]
+}
